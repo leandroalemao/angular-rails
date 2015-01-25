@@ -1,4 +1,4 @@
-%nav.navbar.navbar-default{:role => "navigation"}
+%nav.navbar.navbar-default{:role => "navigation", :"ng-controller" => "SessionsCtrl"}
   .container
     .navbar-header
       %a.navbar-brand{:href => "/"} PoundBit
@@ -6,4 +6,10 @@
       %li
         %a{:href => "/"} Home
       %li
-        %a{:href => "/dashboard"} Dashboard
+        %a{:href => "/dashboard", "ng-show" => "isLoggedIn"} Dashboard
+      %li
+        %a{:href => "/signin", "ng-show" => "!isLoggedIn"} Sign In
+      %li
+        %a{:href => "/signup", "ng-show" => "!isLoggedIn"} Sign Up
+      %li
+        %a{:href => "", "ng-show" => "isLoggedIn", "ng-click" => "logOutUser()"} Logout

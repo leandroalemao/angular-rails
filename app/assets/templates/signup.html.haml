@@ -1,0 +1,21 @@
+.container{:"ng-controller" => "SessionsCtrl"}
+  %h2 Sign Up
+  .standard-block.animated-list-item
+    .col-md-6
+      %form#signin-form{'ng-submit' => "signUpUser()"}
+        .form-group
+          %label{:for => "signin-form-first-name"} First Name
+          %input#signin-form-first-name.form-control{'ng-model' => 'newSession.first_name', placeholder: "First Name", type: "text", required: true}
+        .form-group
+          %label{:for => "signin-form-last-name"} Last Name
+          %input#signin-form-last-name.form-control{'ng-model' => 'newSession.last_name', placeholder: "Last Name", type: "text", required: true}
+        .form-group
+          %label{:for => "signin-form-email"} Email
+          %input#signin-form-email.form-control{'ng-model' => 'newSession.email', placeholder: "Enter email", type: "email", required: true}
+        .form-group
+          %label{:for => "signin-form-password"} Password
+          %input#signin-form-password.form-control{'ng-model' => 'newSession.password', placeholder: "Password", type: "password", required: true}
+        .form-group
+          %label{:for => "signin-form-password-confirmation"} Password Confirmation
+          %input#signin-form-password-confirmation.form-control{'ng-model' => 'newSession.password_confirmation', placeholder: "Password", type: "password", required: true}
+        %button.btn.btn-primary{:type => "submit"} Submit

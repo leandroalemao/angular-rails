@@ -1,0 +1,19 @@
+.container{:"ng-controller" => "SessionsCtrl"}
+  %h2 Sign In
+  .standard-block.animated-list-item
+    .col-md-6
+      .errors{"ng-show" => 'showErrors'}
+        .alert.alert-danger
+          %h5
+            Oops... We have an error...
+          %ul
+            %li{"ng-repeat" => "(key, errors) in errors"}
+              {{errors}}
+      %form#signin-form{'ng-submit' => "signInUser()"}
+        .form-group
+          %label{:for => "signin-form-email"} Email
+          %input#signin-form-email.form-control{'ng-model' => 'newSession.email', placeholder: "Enter email", type: "email", required: true}
+        .form-group
+          %label{:for => "signin-form-password"} Password
+          %input#signin-form-password.form-control{'ng-model' => 'newSession.password', placeholder: "Password", type: "password", required: true}
+        %button.btn.btn-primary{:type => "submit"} Submit

@@ -1,6 +1,10 @@
-.container
+.container{:"ng-controller" => "HomeCtrl"}
   %h2 BitCoin Prices
+  .clearfix
+  #user-not-logged-in{"ng-hide" => "isLoggedIn"}
+    %h5 Please Sign In
   .standard-block.animated-list-item{"ng-repeat" => "bitcoin_price in bitcoin_prices"}
-    %pre USD: {{bitcoin_price.USD.rate | number: 2}}
-    %pre GBP: {{bitcoin_price.GBP.rate | number: 2}}
-    %pre EUR: {{bitcoin_price.EUR.rate | number: 2}}
+    .col-md-2
+      %pre USD: {{bitcoin_price.USD.rate | number: 2}}
+      %pre GBP: {{bitcoin_price.GBP.rate | number: 2}}
+      %pre EUR: {{bitcoin_price.EUR.rate | number: 2}}

@@ -1,19 +1,26 @@
 {
-  "lib": {
-    "name": "bower-rails generated lib assets",
-    "dependencies": {
-      "angular": "latest",
-      "angular-ui-router": "latest",
-      "angular-animate": "latest",
-      "bootstrap-sass-official": "latest"}
-  },
-  "vendor": {
-    "name": "bower-rails generated vendor assets",
-    "dependencies": {
-      "angular": "latest",
-      "angular-ui-router": "latest",
-      "angular-animate": "latest",
-      "bootstrap-sass-official": "latest"
-    }
+  "name": "angular-rails",
+  "version": "0.0.1",
+  "homepage": "https://github.com/leandroalemao/angular-rails",
+  "authors": [
+    "Leandro <leandro.costantini@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.3.8",
+    "angular": "~1.3.8",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap-sass-official": "~3.3.1",
+    "angular-devise": "~1.0.2"
   }
 }

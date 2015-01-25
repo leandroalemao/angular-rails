@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
 
   # Allow Angular to handle client routing
   get '*path' => 'application#index'
+
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

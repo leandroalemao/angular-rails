@@ -1,16 +1,30 @@
 var app = angular.module('angular-rails', [
 	'ui.router',
 	'ngAnimate',
-	'templates'
+	'templates',
+	'Devise'
 ])
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
+
+	$httpProvider.defaults.useXDomain = true;
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 	$stateProvider
 		.state('home', {
 			url: '/',
 			templateUrl: 'home.html',
 			controller: 'HomeCtrl'
+		})
+		.state('signin', {
+			url: '/signin',
+			templateUrl: 'signin.html',
+			controller: 'SessionsCtrl'
+		})
+		.state('signup', {
+			url: '/signup',
+			templateUrl: 'signup.html',
+			controller: 'SessionsCtrl'
 		})
 		// abstract parent state
 		.state('dashboard', {
